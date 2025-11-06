@@ -6,7 +6,7 @@
   "private": true,
   "license": "GPL",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev": "cross-env NODE_ENV=development NUXT_TELEMETRY_DISABLED=1 nodemon server/index.js --watch server",
     "start": "nuxt build && cross-env NODE_ENV=production pm2 start server/index.js --node-args='--harmony' --name 'nuxt-elm'",
     "stop": "pm2 stop server/index.js --name 'nuxt-elm'",
     "restart": "nuxt build && cross-env NODE_ENV=production pm2 restart server/index.js --node-args='--harmony' --name 'nuxt-elm'",

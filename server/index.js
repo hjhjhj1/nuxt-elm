@@ -3,8 +3,8 @@ const consola = require('consola')
 const proxy = require('express-http-proxy')
 const { Nuxt, Builder } = require('nuxt')
 
-// const PROXY_URL = 'http://localhost:9000'; // 反向代理域名，测试
-const PROXY_URL = 'http://elm-api.caibowen.net'; // 反向代理域名，生产
+const PROXY_URL = 'http://localhost:9000'; // 反向代理域名，测试
+// const PROXY_URL = 'http://elm-api.caibowen.net'; // 反向代理域名，生产
 
 const app = express()
 const port = process.env.PORT || 3000
