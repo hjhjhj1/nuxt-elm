@@ -247,6 +247,42 @@
           </div>
         </router-link>
       </section>
+      <section class="profile-1reTe">
+        <div class="faq-section">
+          <h3 class="faq-title">常见问题</h3>
+          <TogglePanel
+            title="如何修改密码？"
+            summary="修改密码需要验证原密码和手机验证码"
+            default-open="false"
+          >
+            <p>1. 进入个人中心，点击“设置”按钮</p>
+            <p>2. 选择“修改密码”选项</p>
+            <p>3. 输入原密码和新密码</p>
+            <p>4. 输入手机验证码完成验证</p>
+            <p>5. 点击“确认修改”完成密码修改</p>
+          </TogglePanel>
+          <TogglePanel
+            title="如何查看订单历史？"
+            summary="在订单页面可以查看所有历史订单"
+            default-open="false"
+          >
+            <p>1. 点击底部导航栏的“订单”按钮</p>
+            <p>2. 在订单页面可以看到所有历史订单</p>
+            <p>3. 点击订单可以查看详细信息</p>
+            <p>4. 可以对订单进行评价、退款等操作</p>
+          </TogglePanel>
+          <TogglePanel
+            title="如何联系客服？"
+            summary="通过客服页面或拨打客服电话联系我们"
+            default-open="false"
+          >
+            <p>1. 进入个人中心，点击“我的客服”按钮</p>
+            <p>2. 在客服页面可以选择在线咨询或拨打客服电话</p>
+            <p>3. 客服工作时间：9:00-21:00</p>
+            <p>4. 我们将尽快为您解决问题</p>
+          </TogglePanel>
+        </div>
+      </section>
     </section>
     <Tabbar page="3" />
   </div>
@@ -254,13 +290,13 @@
 
 <script>
   import Tabbar from "~/components/tabbar";
-  import {
-    mapGetters
-  } from "vuex";
-
+  import TogglePanel from "~/components/TogglePanel";
+  import { mapGetters } from "vuex";
+  
   export default {
     components: {
-      Tabbar
+      Tabbar,
+      TogglePanel
     },
     data() {
       return {
@@ -282,9 +318,6 @@
     mounted() {
       this.initData();
     },
-    head: {
-      title: "我的"
-    },
     methods: {
       initData() {
         if (this.userInfo && this.userInfo.user_id) {
@@ -296,6 +329,9 @@
           this.mobile = "登录后享受更多特权";
         }
       }
+    },
+    head: {
+      title: "我的"
     }
   };
 
@@ -305,6 +341,17 @@
   @import "../../assets/styles/mixin";
 
   .user-page {
+    .faq-section {
+      padding: 0.6rem;
+      
+      .faq-title {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.6rem;
+      }
+    }
+    
     .profile-number {
       padding-top: px2rem(88px);
 
